@@ -1,14 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+
+import ProductProvider from "./contexts/productsContext";
+
+import "./index.css";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ProductProvider>
+        <App />
+      </ProductProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
