@@ -1,0 +1,27 @@
+.NavBar {
+  width: 100%;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .NavBar-list {
+    display: flex;
+    list-style: none;
+    .NavBar-item {
+      margin: 0 1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      .NavBar-item-link {
+        text-decoration: none;
+        color: white;
+        opacity: 0.8;
+        font-size: 1.2rem;
+      }
+    }
+    .NavBar-item:hover {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+    }
+  }
+}
