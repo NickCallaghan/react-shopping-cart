@@ -1,7 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Shop from "./pages/Shop/Shop";
+import Cart from "./pages/Cart/Cart";
 import NavBar from "./components/NavBar/NavBar";
+import Wrapper from "./components/Wrapper/Wrapper";
 
 import "./App.scss";
 
@@ -10,14 +12,20 @@ function App() {
     <>
       <NavBar />
       <div className="App">
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={(routeProps) => <Shop {...routeProps} />}
-          />
-          <Route exatch path="/cart" render={() => <h1>Cart</h1>} />
-        </Switch>
+        <Wrapper>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={(routeProps) => <Shop {...routeProps} />}
+            />
+            <Route
+              exatch
+              path="/cart"
+              render={(routeProps) => <Cart {...routeProps} />}
+            />
+          </Switch>
+        </Wrapper>
       </div>
     </>
   );
