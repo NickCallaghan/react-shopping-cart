@@ -4,6 +4,7 @@ import { v4 as uuid } from "uuid";
 const intialProducts = [
   {
     id: uuid(),
+    category: "shoes",
     name: "Nike air max",
     tagline: "Perfomance shoe",
     desc:
@@ -12,6 +13,7 @@ const intialProducts = [
   },
   {
     id: uuid(),
+    category: "shoes",
     name: "Nike air Jordan",
     tagline: "Ultimate basketball wear",
     desc:
@@ -23,7 +25,7 @@ const intialProducts = [
 export const ProductContext = createContext();
 
 function ProductProvider(props) {
-  const [products, setProducts] = useState(intialProducts);
+  const [products] = useState(intialProducts);
   return (
     <ProductContext.Provider value={products}>
       {props.children}
