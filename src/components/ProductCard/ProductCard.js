@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import "./ProductCard.scss";
 import { CartReducer } from "../../contexts/cartContext";
+import { formatCurrency } from "../../helpers/helpers";
 
 export default function Product(props) {
   const { id, name, tagline, desc, price } = props.product;
   const dispatch = useContext(CartReducer);
 
   const handleAdd = () => {
-    const newCartProduct = {
+    const cartAdjustment = {
       id,
       name,
       tagline,
@@ -15,7 +16,7 @@ export default function Product(props) {
       price,
       qty: 1,
     };
-    dispatch({ type: "ADD", newCartProduct });
+    dispatch({ type: "ADJUST", cartAdjustment });
   };
 
   return (
@@ -33,7 +34,7 @@ export default function Product(props) {
         <p className="ProductCard-desc">{desc} </p>
         <div className="ProductCard-footer">
           <p className="ProductCard-pricing">
-            Price: <span className="price">£{price}</span>
+            Price: <span className="price">{formatCurrency(price)}</span>
           </p>
           <button className="addToCart" onClick={handleAdd}>
             Add to cart

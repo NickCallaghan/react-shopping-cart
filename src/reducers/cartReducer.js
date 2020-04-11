@@ -45,10 +45,20 @@ const getCartTotal = (cartItems) => {
 const cartReducer = (state, action) => {
   let updatedCart;
   switch (action.type) {
-    case "ADD":
+    // ADJUST BASKET QUANTITIES OR ADD NEW ITEM TO CART
+    case "ADJUST":
       updatedCart = {
         ...state,
-        items: addToCart(state.items, action.newCartProduct),
+        items: addToCart(state.items, action.cartAdjustment),
+      };
+      updatedCart.noOfItems = getCartNoOfItems(updatedCart.items);
+      updatedCart.total = getCartTotal(updatedCart.items);
+      return updatedCart;
+    // REMOVE PRODUCT FROM CART ENTIRLY
+    case "REMOVE":
+      updatedCart = {
+        ...state,
+        items: state.items.filter((product) => product.id !== action.id),
       };
       updatedCart.noOfItems = getCartNoOfItems(updatedCart.items);
       updatedCart.total = getCartTotal(updatedCart.items);

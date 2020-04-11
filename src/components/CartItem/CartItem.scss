@@ -7,6 +7,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1em;
+  position: relative;
   .CartItem-Img {
     max-width: 125px;
     display: block;
@@ -37,6 +38,19 @@
       margin: 0 0.3em;
       font-size: 1.4em;
     }
+  }
+  .removeFromCart {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.4);
+    padding: 0 0.2em 0.2em 0.2em;
+    border-radius: 50%;
+    margin: 0 0.3em;
+    font-size: 1em;
+    position: absolute;
+    top: -13px;
+    right: -13px;
   }
 }
 // .CartItem-Info
