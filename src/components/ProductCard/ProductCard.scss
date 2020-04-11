@@ -2,6 +2,7 @@
   border: 1px solid lightgray;
   box-shadow: 3px 3px 25px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 1em;
+  min-width: 350px;
   @media (min-width: 800px) {
     display: flex;
     max-height: 400px;
