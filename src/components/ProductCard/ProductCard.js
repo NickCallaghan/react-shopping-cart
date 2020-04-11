@@ -4,7 +4,7 @@ import { CartReducer } from "../../contexts/cartContext";
 import { formatCurrency } from "../../helpers/helpers";
 
 export default function Product(props) {
-  const { id, name, tagline, desc, price } = props.product;
+  const { id, name, tagline, desc, price, imgUrl } = props.product;
   const dispatch = useContext(CartReducer);
 
   const handleAdd = () => {
@@ -14,6 +14,7 @@ export default function Product(props) {
       tagline,
       desc,
       price,
+      imgUrl,
       qty: 1,
     };
     dispatch({ type: "ADJUST", cartAdjustment });
@@ -22,11 +23,7 @@ export default function Product(props) {
   return (
     <div className="ProductCard">
       <div className="ProductCard-head">
-        <img
-          className="ProductCard-image"
-          src={require("../../images/sample-1.jpg")}
-          alt="a shoe"
-        />
+        <img className="ProductCard-image" src={imgUrl} alt="a shoe" />
       </div>
       <div className="ProductCard-body">
         <h2 className="ProductCard-title">{name}</h2>

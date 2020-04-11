@@ -10,6 +10,7 @@ const intialProducts = [
     desc:
       "Laborum commodo excepteur in non eu proident laborum.Eu id pariatur qui aliquip reprehenderit sit fugiat ex.",
     price: 59.99,
+    imgUrl: "/static/sample-1.jpg",
   },
   {
     id: uuid(),
@@ -19,6 +20,7 @@ const intialProducts = [
     desc:
       "Laborum commodo excepteur in non eu proident laborum.Eu id pariatur qui aliquip reprehenderit sit fugiat ex.",
     price: 69.99,
+    imgUrl: "/static/sample-2.jpg",
   },
 ];
 

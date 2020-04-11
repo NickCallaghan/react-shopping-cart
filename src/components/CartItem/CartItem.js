@@ -24,17 +24,14 @@ export default function CartItem(props) {
     dispatch({ type: "REMOVE", id });
   };
 
+  console.log(product);
   return (
     <div className="CartItem">
       <button className="removeFromCart" onClick={handleRemoveFromCart}>
         x
       </button>
       <div className="CartItem-Img-wrapper">
-        <img
-          className="CartItem-Img"
-          src={require("../../images/sample-1.jpg")}
-          alt="product"
-        />
+        <img className="CartItem-Img" src={product.imgUrl} alt="product" />
       </div>
       <div className="CartItem-content">
         <div className="CartItem-Info">

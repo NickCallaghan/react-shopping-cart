@@ -1,0 +1,13 @@
+.Cart-total {
+  display: flex;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0 1em;
+  font-weight: 500;
+
+  .Cart-total-label {
+    margin-right: auto;
+    text-transform: uppercase;
+  }
+}
