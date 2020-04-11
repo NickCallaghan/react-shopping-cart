@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./ProductCard.scss";
+import { v4 as uuid } from "uuid";
+import { CartContext, CartReducer } from "../../contexts/cartContext";
 
 export default function Product(props) {
-  const { name, tagline, desc, price } = props.product;
+  const { id, name, tagline, desc, price } = props.product;
+  const cart = useContext(CartContext);
+  const dispatch = useContext(CartReducer);
+
+  const handleAdd = () => {
+    const newCartProduct = {
+      id,
+      qty: 1,
+    };
+    dispatch({ type: "ADD", newCartProduct });
+  };
+
   return (
     <div className="ProductCard">
       <div className="ProductCard-head">
@@ -20,7 +33,9 @@ export default function Product(props) {
           <p className="ProductCard-pricing">
             Price: <span className="price">£{price}</span>
           </p>
-          <button className="addToCart">Add to cart</button>
+          <button className="addToCart" onClick={handleAdd}>
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
