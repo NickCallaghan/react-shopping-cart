@@ -12,7 +12,7 @@ export default function Cart() {
   return (
     <div>
       <h1>Cart</h1>
-      {noOfItems === 0 && <EmptyCart />}
+      {cart.items.length === 0 && <EmptyCart />}
       {items.map((product) => (
         <CartItem product={product} key={product.id} />
       ))}
