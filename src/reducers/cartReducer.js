@@ -1,6 +1,4 @@
-import { v4 as uuid } from "uuid";
-
-function addToCart(cartProducts, productToAdd) {
+const addToCart = (cartProducts, productToAdd) => {
   //This function takes the cart items and a new item which is to be added. It returns an updated array of cart items.
 
   // if there are no products in the cart return new item only.
@@ -30,15 +28,31 @@ function addToCart(cartProducts, productToAdd) {
     );
     return newCartProducts;
   }
-}
+};
+
+const getCartNoOfItems = (cartItems) => {
+  return cartItems.reduce((acc, current) => {
+    return acc + current.qty;
+  }, 0);
+};
+
+const getCartTotal = (cartItems) => {
+  return cartItems.reduce((acc, current) => {
+    return acc + current.qty * current.price;
+  }, 0);
+};
 
 const cartReducer = (state, action) => {
+  let updatedCart;
   switch (action.type) {
     case "ADD":
-      return {
+      updatedCart = {
         ...state,
         items: addToCart(state.items, action.newCartProduct),
       };
+      updatedCart.noOfItems = getCartNoOfItems(updatedCart.items);
+      updatedCart.total = getCartTotal(updatedCart.items);
+      return updatedCart;
     default:
       return state;
   }
