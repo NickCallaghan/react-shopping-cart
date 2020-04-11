@@ -5,8 +5,8 @@ const intialProducts = [
   {
     id: uuid(),
     category: "shoes",
-    name: "Nike air max",
-    tagline: "Perfomance shoe",
+    name: "Nike Air Force One",
+    tagline: "Stylish Street Shoe",
     desc:
       "Laborum commodo excepteur in non eu proident laborum.Eu id pariatur qui aliquip reprehenderit sit fugiat ex.",
     price: 59.99,
@@ -15,12 +15,42 @@ const intialProducts = [
   {
     id: uuid(),
     category: "shoes",
-    name: "Nike air Jordan",
-    tagline: "Ultimate basketball wear",
+    name: "Nike Free",
+    tagline: "Performance Running Shoe",
     desc:
       "Laborum commodo excepteur in non eu proident laborum.Eu id pariatur qui aliquip reprehenderit sit fugiat ex.",
     price: 69.99,
     imgUrl: "/static/sample-2.jpg",
+  },
+  {
+    id: uuid(),
+    category: "shoes",
+    name: "Nike Air Max",
+    tagline: "Retro Cool",
+    desc:
+      "Laborum commodo excepteur in non eu proident laborum.Eu id pariatur qui aliquip reprehenderit sit fugiat ex.",
+    price: 99.99,
+    imgUrl: "/static/sample-3.jpg",
+  },
+  {
+    id: uuid(),
+    category: "shoes",
+    name: "Nike Hi-Tops",
+    tagline: "Ultimate basketball wear",
+    desc:
+      "Laborum commodo excepteur in non eu proident laborum.Eu id pariatur qui aliquip reprehenderit sit fugiat ex.",
+    price: 39.99,
+    imgUrl: "/static/sample-4.jpg",
+  },
+  {
+    id: uuid(),
+    category: "shoes",
+    name: "New Balance 578",
+    tagline: "Multi-Purpose Gym Trainer",
+    desc:
+      "Laborum commodo excepteur in non eu proident laborum.Eu id pariatur qui aliquip reprehenderit sit fugiat ex.",
+    price: 49.95,
+    imgUrl: "/static/sample-5.jpg",
   },
 ];
 
