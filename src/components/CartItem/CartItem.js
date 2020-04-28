@@ -24,26 +24,25 @@ export default function CartItem(props) {
     dispatch({ type: "REMOVE", id });
   };
 
-  console.log(product);
   return (
     <div className="CartItem">
       <button className="removeFromCart" onClick={handleRemoveFromCart}>
         x
       </button>
       <div className="CartItem-Img-wrapper">
-        <img className="CartItem-Img" src={product.imgUrl} alt="product" />
+        <img data-testid="product-image" className="CartItem-Img" src={product.imgUrl} alt={product.name} />
       </div>
       <div className="CartItem-content">
         <div className="CartItem-Info">
-          <h3>{product.name}</h3>
-          <h4>{product.tagline}</h4>
+          <h3 data-testid="product-name">{product.name}</h3>
+          <h4 data-testid="product-tagline">{product.tagline}</h4>
         </div>
         <div className="CartItem-Qty">
-          <p className="CartItem-price">{formatCurrency(product.price)}</p>
+          <p data-testid="product-price" className="CartItem-price">{formatCurrency(product.price)}</p>
           <div className="buttonWrapper">
-            <button onClick={(e) => handleAdjustQty(-1)}>-</button>
-            <p>{product.qty}</p>
-            <button onClick={(e) => handleAdjustQty(1)}>+</button>
+            <button data-testid="increment" onClick={(e) => handleAdjustQty(-1)}>-</button>
+            <p data-testid="product-qty">{product.qty}</p>
+            <button data-testid="decrement"  onClick={(e) => handleAdjustQty(1)}>+</button>
           </div>
         </div>
       </div>
