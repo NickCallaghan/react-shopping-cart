@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import { CartProvider } from "./contexts/cartContext";
+import { FirebaseContext } from "./firebase/FirebaseContext";
+import Firebase from "./firebase/Firebase";
+
 import ProductProvider from "./contexts/productsContext";
 
 import "./index.css";
@@ -11,11 +14,13 @@ import App from "./App";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProductProvider>
-        <CartProvider>
-          <App />
-        </CartProvider>
-      </ProductProvider>
+      <FirebaseContext.Provider value={new Firebase()}>
+        <ProductProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </ProductProvider>
+      </FirebaseContext.Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

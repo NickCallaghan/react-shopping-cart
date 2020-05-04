@@ -1,0 +1,28 @@
+.AddProductForm {
+  form {
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      font-size: 1em;
+      padding: 0.5em 1em;
+      margin: 0.2em 0 0.5em;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .submitButton {
+      background-color: rgba(141, 72, 232, 1);
+      color: white;
+      outline: none;
+      padding: 1em 1.5em;
+      border-radius: 8px;
+      border: none;
+      text-transform: uppercase;
+      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin-top: 1em;
+      &:active {
+        background-color: rgba(141, 72, 232, 0.7);
+      }
+    }
+  }
+}
